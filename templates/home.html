@@ -1,0 +1,87 @@
+{% include 'base.html' %}{% load my-tags %}
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="home-layout">
+  {% block content %}
+  <div class="page-content">  
+    {% for post in grampost %}
+    <div class="post">
+      <div id="user">
+        <p>
+          <div class="user-stuff">           
+            {% for s_user in siteuser %}
+            {% if s_user.user == post.user %}
+            <div class="user-img">
+              <img src="{{ s_user.profile_pic.url }}" width="40px" height="40px"> 
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="user-name">
+              {{ post.user }}
+            </div>
+          </div>
+        </p>
+      </div>
+      <p><img src="{{ post.image.url }}" width="450px" /></p>
+      <div class="feed-back">
+        <p>
+          <form id="like-btn-{{post.id}}" method="post">
+            {% csrf_token %}
+            {% with False as likess %}
+            {% for like in postlikes %}
+              {% if user == like.user and like.post.id == post.id %}
+                {% update_variable True as likess %}
+                <button type="submit" name="heart-liked" id="heart-{{post.id}}" value="{{post.id}}" onclick="toggleButton()"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
+              {% elif forloop.last and likess == False %} 
+                <button type="submit" name="heart-unliked" id="heart-{{post.id}}" value="{{post.id}}" onclick="toggleButton()"><i class="fa-regular fa-heart"></i></button>  
+              {% endif %} 
+            {% empty %}
+            <button type="submit" name="heart-unliked" id="heart-{{post.id}}" value="{{post.id}}" onclick="toggleButton()"><i class="fa-regular fa-heart"></i></button>  
+            {% endfor %}
+            {% endwith %}
+            <a href="{% url 'comment' post.id %}"><i class="fa-regular fa-comment"></i></a>
+          </form>
+        </p>
+      </div>
+      <p id="liked-{{post.id}}">{{ post.likes }} Likes</p>
+      <p><b>{{ post.user }}</b> - {{ post.blurb }}</p>
+        {% for comment in comments %}
+          {% if post == comment.post %}
+            <p><b>{{ comment.user }}</b> - {{ comment.comment }}</p>
+          {% endif %}
+        {% endfor %}
+
+      <p class="time-posted">{{ post.time }}</p>
+    </div>
+    <script>
+      $(document).on('submit', '#like-btn-{{post.id}}' , function (e) {
+        e.preventDefault();
+
+        var btn = document.getElementById('heart-{{post.id}}');
+        if (btn.name == 'heart-unliked') {
+          btn.innerHTML = "<i class='fa-solid fa-heart' style='color: #ff0000;''></i>"
+          btn.name = "heart-liked"
+        } else {
+          btn.innerHTML = "<i class='fa-regular fa-heart'></i>"
+          btn.name = "heart-unliked"
+        }
+
+        $.ajax({
+          type: 'post',
+          url: "{% url 'home' %}",
+          data: {
+            heart: $('#heart-{{post.id}}').val(),
+            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+          },
+          success: function (data) {
+            $('#liked-{{post.id}}').html(data)
+          }
+        })
+      })
+    </script>
+    {% endfor %} 
+  </div>
+  {% endblock %}
+
+</body>

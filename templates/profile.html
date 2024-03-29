@@ -1,0 +1,35 @@
+{% include 'base.html' %}{% block content %}
+<div class="page-content">
+  {% if user.is_authenticated %}
+  <div id="p-info">
+    <div class="profile-name">{{ user }}</div>
+    <div id="p-edit">
+      <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    </div>
+    <div class="p-post-number"><b>{{grampost.count}}</b> Posts</div>
+    
+  </div>
+
+    <div class="profile-img">
+      <img src="{{ user.siteuser.profile_pic.url }}" alt="profile_pic" />
+    </div>
+    <div class="p-blurb">
+      <p>{{user.siteuser.profile_blurb}}</p>
+    </div>
+  
+  <div class="profile-nav"></div>
+    <div class="p-posts">
+      {% for post in grampost %}
+      <div class="p-post">
+        <a href="{% url 'edit_post' post.id %}">
+          <img src="{{ post.image.url }}"/>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <p>Login to view your details</p>
+  {% endif %}
+</div>
+{% endblock %}

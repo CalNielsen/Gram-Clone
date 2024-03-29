@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/login.css" />
+    <title>Gram Login</title>
+  </head>
+  <body>
+    {% block content %}
+
+    <div id="log-in-form">
+      <h2>Login</h2>
+      <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Login</button>
+      </form>
+      <button type="button">
+        <a href="{% url 'create_user' %}">Sign Up</a>
+      </button>
+    </div>
+    {% endblock %}
+  </body>
+</html>

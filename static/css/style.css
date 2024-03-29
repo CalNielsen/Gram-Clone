@@ -1,0 +1,355 @@
+body{
+    background: #003333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+header
+   |
+   |
+   V
+*/
+
+#head a{
+    text-decoration: none;
+    color: #CCCC99;
+}
+
+#head{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+    width: 100vw;
+    background: #003366;
+    color: #CCCC99;
+    font-size: 30px;
+    height: 100px;
+    border-bottom: .5px solid white;
+}
+
+#head .login{
+    text-align: right;
+    margin-right: 10px;
+    font-size: small;
+}
+
+#head .gram{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+    
+
+
+/* 
+Keeps each page uniform
+      |
+      |
+      V
+*/
+
+.page-content{
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15vh;
+    padding-bottom: 100px;
+    color: #CCCC99;
+}
+
+/* 
+css for home.html
+      |
+      |
+      V
+*/
+
+.post{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    color: #CCCC99;
+    background: #003366;
+    border-style: solid;
+    border-color: #003366;
+    box-shadow: 2px 2px 5px black;
+    margin-top: 10px;
+}
+
+.post p{
+    text-align: left;
+}
+
+.post p i{
+    padding-right: 10px;
+}
+
+.post p img{
+    margin-top: -10px;
+}
+
+#user{
+    display: flex;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.user-stuff{
+    display: flex;
+}
+
+.user-img img{
+    border-radius: 50%;
+}
+.user-name{
+    top: 50%;
+    left: 50%;
+    transform: translate(10%, 25%);
+    font-size: medium;
+}
+ 
+form button{
+    font-size: 20px;
+    border: none;
+    background: #003366;
+    color: #CCCC99;
+    cursor: pointer; 
+}
+
+form a{
+    font-size: 20px;
+    border: none;
+    background: #003366;
+    color: #CCCC99;
+    cursor: pointer; 
+}
+
+form button:hover{
+    color: red;
+}
+
+form a:hover{
+    color: red;
+}
+
+.time-posted{
+    opacity: .5;
+}
+
+/* 
+profile.html
+      |
+      |
+      V
+*/
+
+
+.profile-img img{
+    margin-left: 3vw;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+.profile-name{
+    position: absolute;
+    left: 50%;
+    top: 135px;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 33vw;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#p-edit{
+    position: absolute;
+    left: 50%;
+    top: 135px;
+    transform: translate(200%, -50%);
+    display: inline-table;
+}
+
+#p-edit a{
+    text-decoration: none;
+    background: #003366;
+    color: #CCCC99;
+    padding: 2px;
+    border-style: solid;
+    border-width: .5px;
+    border-radius: 20%;
+    border-color: #CCCC99;
+}
+
+.p-post-number{
+    position: absolute;
+    left: 50%;
+    top: 185px;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.p-blurb{
+    margin: auto;
+    text-align: center;
+    background: #003366;
+    border-style: solid;
+    border-width: .5px;
+    border-color: #CCCC99;
+    display: inline-block;
+    width: 300px;
+    margin-bottom: 10px; 
+}
+
+.profile-nav{
+    width: 100vw;
+    height: 20px;
+    background: #003366;
+    color: #CCCC99;
+}
+
+
+.p-posts{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4, minmax(100px,33vw));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+}
+
+.p-post{
+    background: #CCCC99;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.p-post img{
+    width: 33vw;
+    height: 33vw;
+    object-fit: cover;
+    object-position: top;
+}
+
+/*
+editting profile page
+    |
+    |
+    |
+    V
+*/
+
+.edit-p{
+    background: #003366;
+    text-align: center;
+    display: block;
+    width: 450px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px black;
+}
+
+#p-file{
+    display: none;
+}
+
+#file-label {
+    padding: 10px;
+    width: 100px;
+    font-size: large;
+    color: #CCCC99;
+    text-align: center;
+    cursor: pointer;
+}
+
+#file-label:hover{
+    color: red;
+}
+
+/*
+changing up posts
+    |
+    |
+    |
+    V
+*/
+
+.make-a-post{
+    text-align: center;
+    background:#003366;
+    width: 450px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px black;
+}
+
+.edit-post{
+    background: #003366;
+    width: 450px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 2px 2px 5px black;
+}
+
+.edit-post img{
+    width: 450px;
+}
+
+.new-comment{
+    text-align: center;
+}
+
+
+/* 
+footer
+    |
+    |
+    V
+*/
+
+#foot a{
+    display: flex;
+    transform: translate(3%, -50%) rotate(-45deg);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 60px;
+    height: 60px;
+    background: #003366;
+    border-style: solid;
+    border-color: white;
+    border-width: .7px;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    padding: 5px;
+    text-decoration: none;
+    color: #CCCC99;
+    font-size: 60px;
+}
+
+
+#foot{ 
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    height: 50px;
+    border-top: .5px solid white;
+    background: #003366;
+    width: 100%;
+}

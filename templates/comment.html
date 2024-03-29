@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+<body>
+  {% block content %}
+  <div class="page-content">
+    <div class="edit-post">
+      <p><img src="{{ grampost.image.url }}" alt="img" /></p>
+      <div class="new-comment">
+        <form enctype="multipart/form-data" method="post">
+          {% csrf_token %}
+          <p>
+            <textarea
+              name="comment"
+              rows="5"
+              cols="33"
+              placeholder="Write comment here..."
+            ></textarea>
+          </p>
+          <p><button type="submit">Comment</button></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>

@@ -1,0 +1,17 @@
+{% include 'base.html' %}{% block content %}
+<div class="page-content">
+  <div class="edit-post">
+    <h1>Edit Post</h1>
+    <img src="{{ post.image.url }}" alt="img" width="450px" />
+    <form method="POST">
+      {% csrf_token %}
+      <p>
+        <textarea name="blurb" rows="5" cols="33">{{ post.blurb }}</textarea>
+      </p>
+      <p><input type="hidden" name="like" value="{{ post.like }}" /></p>
+      <p><button type="submit" name="update">Update</button></p>
+      <p><button type="submit" name="delete">Delete</button></p>
+    </form>
+  </div>
+</div>
+{% endblock %}

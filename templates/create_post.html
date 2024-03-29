@@ -1,0 +1,20 @@
+{% include 'base.html' %} {% block content %}
+<div class="page-content">
+  <div class="make-a-post">
+    <h1>Make A Post</h1>
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      <p><input type="file" name="image" accept="image/png, image/jpeg" /></p>
+      <p>
+        <textarea
+          name="blurb"
+          rows="5"
+          cols="33"
+          placeholder="write your discription here..."
+        ></textarea>
+      </p>
+      <p><button type="submit">Post</button></p>
+    </form>
+  </div>
+</div>
+{% endblock %}

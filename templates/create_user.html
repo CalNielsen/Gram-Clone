@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" href="/static/css/login.css" />
+</head>
+{% block content %} 
+<div class="sign-up">
+    <h2>Sign Up</h2>
+    {% if errors != "" %}
+    {% for error in errors %}
+    <div class="errors">
+      <p id="errors">{{error}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <form method="post" id="sign-up-form">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group col-sm-6 col-md-4">
+          <p><input type="text" name="username" id="username" placeholder="Create Username"></p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-sm-6">
+          <p><input type="text" name="password1" id="password1" placeholder="Create Password"></p>
+        </div>
+        <div class="form-group col-sm-6">
+          <p><input type="text" name="password2" id="password2" placeholder="Confirm Password"></p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <button type="button" class="btn btn-secondary">
+        <a href="{% url 'login' %}">Go Back</a>
+      </button>
+    </form>
+  </div>
+    {% endblock %}
+</html>

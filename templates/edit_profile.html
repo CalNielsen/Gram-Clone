@@ -1,0 +1,31 @@
+{% include 'base.html' %} {% block content %}
+<div class="page-content">
+  <div class="edit-p">
+    <h1>Edit Profile</h1>
+    <h2>{% block title %} {{ user }} {% endblock %}</h2>
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      <textarea
+        name="profile_blurb"
+        rows="5"
+        cols="33"
+        placeholder="Write profile discription here..."
+      ></textarea>
+      <p>
+        <input
+          type="file"
+          id="p-file"
+          name="profile_pic"
+          accept="image/png, image/jpeg"
+        />
+        <label for="p-file" data-role="button" id="file-label"
+          >Upload profie image</label
+        >
+      </p>
+      <p>
+        <button type="submit" name="update">Submit</button>
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

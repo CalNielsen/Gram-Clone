@@ -1,0 +1,45 @@
+body{
+    background: #003333;
+}
+
+#log-in-form{
+    text-align: center;    
+    background:  #003366;
+    border-radius: 25px;
+    padding: 2px;
+    box-shadow: 5px 5px 5px black;
+    margin: auto;
+    margin-top: 35vh;
+    width: 500px;
+    color: #CCCC99;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* 
+user sign up form
+      |
+      |
+      V
+*/
+
+.sign-up{
+    background: #003366;
+    color: #CCCC99;
+    width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 35vh;
+    text-align: center;
+    padding: 2px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.errors{
+    color: red;
+}
