@@ -1,2 +1,4 @@
 env
 MyVenv
+.DS_Store
+Users/.DS_Store

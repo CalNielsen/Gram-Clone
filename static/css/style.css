@@ -1,4 +1,4 @@
-body{
+body {
     background: #003333;
     margin: 0;
     padding: 0;
@@ -11,12 +11,12 @@ header
    V
 */
 
-#head a{
+#head a {
     text-decoration: none;
     color: #CCCC99;
 }
 
-#head{
+#head {
     position: fixed;
     top: 0;
     left: 0;
@@ -30,20 +30,20 @@ header
     border-bottom: .5px solid white;
 }
 
-#head .login{
+#head .login {
     text-align: right;
     margin-right: 10px;
     font-size: small;
 }
 
-#head .gram{
+#head .gram {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 50px;
 }
-    
+
 
 
 /* 
@@ -53,7 +53,7 @@ Keeps each page uniform
       V
 */
 
-.page-content{
+.page-content {
     overflow: scroll;
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ css for home.html
       V
 */
 
-.post{
+.post {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -82,63 +82,64 @@ css for home.html
     margin-top: 10px;
 }
 
-.post p{
+.post p {
     text-align: left;
 }
 
-.post p i{
+.post p i {
     padding-right: 10px;
 }
 
-.post p img{
+.post p img {
     margin-top: -10px;
 }
 
-#user{
+#user {
     display: flex;
     margin-top: 8px;
     margin-left: 8px;
 }
 
-.user-stuff{
+.user-stuff {
     display: flex;
 }
 
-.user-img img{
+.user-img img {
     border-radius: 50%;
 }
-.user-name{
+
+.user-name {
     top: 50%;
     left: 50%;
     transform: translate(10%, 25%);
     font-size: medium;
 }
- 
-form button{
+
+form button {
     font-size: 20px;
     border: none;
     background: #003366;
     color: #CCCC99;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
-form a{
+form a {
     font-size: 20px;
     border: none;
     background: #003366;
     color: #CCCC99;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
-form button:hover{
+form button:hover {
     color: red;
 }
 
-form a:hover{
+form a:hover {
     color: red;
 }
 
-.time-posted{
+.time-posted {
     opacity: .5;
 }
 
@@ -150,7 +151,7 @@ profile.html
 */
 
 
-.profile-img img{
+.profile-img img {
     margin-left: 3vw;
     width: 100px;
     height: 100px;
@@ -158,7 +159,7 @@ profile.html
 }
 
 
-.profile-name{
+.profile-name {
     position: absolute;
     left: 50%;
     top: 135px;
@@ -169,7 +170,7 @@ profile.html
     font-size: xx-large;
 }
 
-#p-edit{
+#p-edit {
     position: absolute;
     left: 50%;
     top: 135px;
@@ -177,7 +178,7 @@ profile.html
     display: inline-table;
 }
 
-#p-edit a{
+#p-edit a {
     text-decoration: none;
     background: #003366;
     color: #CCCC99;
@@ -188,7 +189,7 @@ profile.html
     border-color: #CCCC99;
 }
 
-.p-post-number{
+.p-post-number {
     position: absolute;
     left: 50%;
     top: 185px;
@@ -196,7 +197,7 @@ profile.html
     display: inline-block;
 }
 
-.p-blurb{
+.p-blurb {
     margin: auto;
     text-align: center;
     background: #003366;
@@ -205,35 +206,36 @@ profile.html
     border-color: #CCCC99;
     display: inline-block;
     width: 300px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
-.profile-nav{
+.profile-nav {
     width: 100vw;
     height: 20px;
-    background: #003366;
+    /* background: #003366; */
     color: #CCCC99;
 }
 
 
-.p-posts{
+.p-posts {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(4, minmax(100px,33vw));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, minmax(100px, 33vw));
     grid-gap: 1rem;
     grid-auto-flow: row;
 }
 
-.p-post{
-    background: #CCCC99;
+.p-post {
+    margin-top: 10px;
     justify-content: center;
     text-align: center;
     padding-bottom: 1rem;
 }
 
-.p-post img{
-    width: 33vw;
-    height: 33vw;
+.p-post img {
+
+    width: 28vw;
+    height: 28vw;
     object-fit: cover;
     object-position: top;
 }
@@ -246,7 +248,7 @@ editting profile page
     V
 */
 
-.edit-p{
+.edit-p {
     background: #003366;
     text-align: center;
     display: block;
@@ -257,7 +259,7 @@ editting profile page
     box-shadow: 2px 2px 5px black;
 }
 
-#p-file{
+#p-file {
     display: none;
 }
 
@@ -270,7 +272,7 @@ editting profile page
     cursor: pointer;
 }
 
-#file-label:hover{
+#file-label:hover {
     color: red;
 }
 
@@ -282,9 +284,9 @@ changing up posts
     V
 */
 
-.make-a-post{
+.make-a-post {
     text-align: center;
-    background:#003366;
+    background: #003366;
     width: 450px;
     display: block;
     margin-top: 10px;
@@ -293,7 +295,7 @@ changing up posts
     box-shadow: 2px 2px 5px black;
 }
 
-.edit-post{
+.edit-post {
     background: #003366;
     width: 450px;
     display: block;
@@ -304,11 +306,11 @@ changing up posts
     box-shadow: 2px 2px 5px black;
 }
 
-.edit-post img{
+.edit-post img {
     width: 450px;
 }
 
-.new-comment{
+.new-comment {
     text-align: center;
 }
 
@@ -320,7 +322,7 @@ footer
     V
 */
 
-#foot a{
+#foot a {
     display: flex;
     transform: translate(3%, -50%) rotate(-45deg);
     margin-left: auto;
@@ -342,7 +344,7 @@ footer
 }
 
 
-#foot{ 
+#foot {
     display: flex;
     position: fixed;
     bottom: 0;
