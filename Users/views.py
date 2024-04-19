@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from .forms import SignUpForm, GramPostForm, CommentForm, LikeForm, SiteUserForm
 from django.contrib import messages
 from .models import SiteUser, GramPost, PostComments, PostLikes
